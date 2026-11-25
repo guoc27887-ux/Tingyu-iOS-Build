@@ -23,6 +23,24 @@ targets:
         name: web
     info:
       path: App/Info.plist
+      properties:
+        CFBundleDisplayName: 听屿
+        CFBundleShortVersionString: "1.5.151"
+        CFBundleVersion: "367"
+        UILaunchStoryboardName: LaunchScreen
+        UIBackgroundModes:
+          - audio
+        NSAppTransportSecurity:
+          NSAllowsArbitraryLoads: true
+          NSAllowsLocalNetworking: true
+        NSPhotoLibraryAddUsageDescription: 保存封面图片到相册
+        NSLocalNetworkUsageDescription: 本地音频服务
+        UIFileSharingEnabled: true
+        LSSupportsOpeningDocumentsInPlace: true
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: io.github.huleixin.tingyu
