@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/interface-theme-startup.css" />
+    <script src="/interface-theme-startup.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="referrer" content="no-referrer" />
+    <meta name="description" content="一个动态歌词播放器，支持 AI 主题生成" />
+    <meta name="theme-color" content="#102D25" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="听屿" />
+    <link rel="icon" type="image/png" href="/icon-512.png" />
+    <link rel="apple-touch-icon" href="/icon-512.png" />
+    <title>听屿</title>
+    <script src="/runtime-config.js"></script>
+
+    <!-- 首屏加载遮罩：内联样式，随 HTML 首帧一起绘制，不等 index.css 与 JS bundle。
+         由 src/utils/appSplash.ts 在 React 挂载后淡出并移除。 -->
+    <script>
+      // 启动底色定色，必须早于首帧绘制。
+      // 与原生启动窗口同源：LaunchSurface（深 #102D25 / 浅 #F4F5EE），偏好键与
+      // InterfaceAppearance 的 SharedPreferences 同名同值（system|light|dark）。
+      // 这段以前的底色是 #09090b，于是 WebView 一画出 HTML 就在已经上色的启动窗口上
+      // 盖一块纯黑：录屏 68737 里 0.50~0.80s 那段 std≈1.3 的死黑就是它（第 4 层来源）。
+      // 定色实现由 interface-theme-startup.js 从共享注册表生成。
+    </script>
+    <style>html,body,#app-splash{background-color:var(--ty-launch-bg)}</style>
+    <link rel="stylesheet" href="/brand-splash.css" />
+  <script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "framer-motion": "https://aistudiocdn.com/framer-motion@^12.23.24",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
+    "react-i18next": "https://aistudiocdn.com/react-i18next@^16.3.5",
+    "i18next": "https://aistudiocdn.com/i18next@^25.6.3",
+    "i18next-browser-languagedetector": "https://aistudiocdn.com/i18next-browser-languagedetector@^8.2.0"
+  }
+}
+</script>
+  <script type="module" crossorigin src="/assets/main-OfcgA0SO.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/md5-UtpR8CWv.js">
+  <link rel="modulepreload" crossorigin href="/assets/modulepreload-polyfill-P2Xu9kJm.js">
+  <link rel="modulepreload" crossorigin href="/assets/react-vendor-CbA1u6HB.js">
+  <link rel="modulepreload" crossorigin href="/assets/react-BbOHeKyE.js">
+  <link rel="modulepreload" crossorigin href="/assets/middleware-ZXcm-2wU.js">
+  <link rel="modulepreload" crossorigin href="/assets/selection-ZVPH1LTd.js">
+  <link rel="modulepreload" crossorigin href="/assets/providerRegistry-BuBc_mfU.js">
+  <link rel="modulepreload" crossorigin href="/assets/colorOsLyricInfo-YVGvUrre.js">
+  <link rel="modulepreload" crossorigin href="/assets/sharedSongResources-DXK6wCQv.js">
+  <link rel="modulepreload" crossorigin href="/assets/__vite-browser-external-DsRMMhaz.js">
+  <link rel="modulepreload" crossorigin href="/assets/useStatusMessageStore-DWYYTu6H.js">
+  <link rel="modulepreload" crossorigin href="/assets/useAudioSettingsStore-BUUVjJVO.js">
+  <link rel="modulepreload" crossorigin href="/assets/resourceKeys-BsFycq8c.js">
+  <link rel="modulepreload" crossorigin href="/assets/coverCache-DkNq73f5.js">
+  <link rel="modulepreload" crossorigin href="/assets/onlinePlaybackDiagnostics-D2MxJSTv.js">
+  <link rel="modulepreload" crossorigin href="/assets/omni-BTZEUns5.js">
+  <link rel="modulepreload" crossorigin href="/assets/songMetadata-CucB8g3A.js">
+  <link rel="modulepreload" crossorigin href="/assets/navidromeService-BLh-IG2R.js">
+  <link rel="modulepreload" crossorigin href="/assets/localCoverAssetUrl-CGpy0Jor.js">
+  <link rel="modulepreload" crossorigin href="/assets/useMobileLibraryStore-Dfzh7Uim.js">
+  <link rel="modulepreload" crossorigin href="/assets/nativePages-Dc-TmFKu.js">
+  <link rel="modulepreload" crossorigin href="/assets/useAppViewStore-B3-XZERF.js">
+  <link rel="modulepreload" crossorigin href="/assets/useSettingsModalStore-CZD3QnCu.js">
+  <link rel="modulepreload" crossorigin href="/assets/lucide-icons-C3wv_8J1.js">
+  <link rel="modulepreload" crossorigin href="/assets/useMotionSettingsStore-BfnpAJIh.js">
+<link rel="manifest" href="/manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="/registerSW.js"></script></head>
+  <body>
+    <div id="app-splash" role="status" aria-live="polite" aria-label="正在加载听屿">
+      <div class="glow a" aria-hidden="true"></div><div class="glow b" aria-hidden="true"></div>
+      <svg class="opening-wave" viewBox="0 0 340 110" aria-hidden="true" focusable="false">
+        <path d="M-10 59 C46 18 97 99 164 57 S273 17 350 47" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+      </svg>
+      <div class="center">
+        <div class="logo"><img src="/brand/logo-symbol.svg" alt="听屿海浪品牌 Logo"/></div>
+        <div class="brand">听屿</div>
+        <div class="brand-english">T I N G Y U</div>
+        <div class="slogan">以声为海，以乐为屿。</div>
+        <div class="subtitle">让每一段旋律，都有栖息之处。</div>
+      </div>
+      <div class="footer">TINGYU · MUSIC ISLAND</div>
+    </div>
+    <script src="/brand-splash.js"></script>
+    <div id="root"></div>
+  </body>
+</html>

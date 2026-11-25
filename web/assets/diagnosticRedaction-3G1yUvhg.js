@@ -1,0 +1,1 @@
+var e=e=>e.replace(/\b(?:https?|wss?):\/\/[^\s<>"']+/gi,`[url-redacted]`).replace(/^.*(?:authorization|bearer|cookie|(?:access|refresh|api|sync)[_-]?(?:token|key)|["']?token["']?\s*[:=]).*$/gim,`[credential-redacted]`);export{e as redactDiagnosticReport};

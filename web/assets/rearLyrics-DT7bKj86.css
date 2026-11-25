@@ -1,0 +1,1 @@
+html[data-rear-aod=true] *,html[data-rear-aod=true] :before,html[data-rear-aod=true] :after{transition:none!important;animation-play-state:paused!important}html[data-rear-aod=true][data-folia-surface=rear-lyrics-panel] [data-subtitle-track],html[data-rear-aod=true][data-folia-surface=rear-lyrics-panel] [data-pendolo-subtitle-track]{opacity:.72!important}

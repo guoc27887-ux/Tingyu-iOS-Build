@@ -1,0 +1,1 @@
+import"./noLyricLines-BzL-NvAK.js";import{i as e}from"./registry-CYGTgrYZ.js";var t=t=>{if(t.config?.transparent)return null;let n=t.config?.mode??`latent`;return e(n).render(t)};export{t};

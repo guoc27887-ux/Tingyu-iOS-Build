@@ -1,0 +1,41 @@
+name: Build unsigned IPA
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install XcodeGen
+        run: brew install xcodegen
+
+      - name: Generate project
+        run: xcodegen generate
+
+      - name: Build app (unsigned)
+        run: |
+          xcodebuild -project Tingyu.xcodeproj -scheme Tingyu \
+            -configuration Release -sdk iphoneos \
+            -derivedDataPath build/DD \
+            CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO \
+            build
+
+      - name: Package IPA
+        run: |
+          APP=build/DD/Build/Products/Release-iphoneos/Tingyu.app
+          test -d "$APP"
+          mkdir -p Payload
+          cp -R "$APP" Payload/
+          zip -qry Tingyu-1.5.151-ios-unsigned.ipa Payload
+          ls -la Tingyu-1.5.151-ios-unsigned.ipa
+
+      - name: Upload IPA
+        uses: actions/upload-artifact@v4
+        with:
+          name: Tingyu-iOS-unsigned
+          path: Tingyu-1.5.151-ios-unsigned.ipa

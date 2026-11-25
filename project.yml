@@ -1,0 +1,29 @@
+name: Tingyu
+options:
+  bundleIdPrefix: io.github.huleixin
+  deploymentTarget:
+    iOS: "18.0"
+settings:
+  base:
+    MARKETING_VERSION: "1.5.151"
+    CURRENT_PROJECT_VERSION: "367"
+    SWIFT_VERSION: "5.0"
+    CODE_SIGNING_ALLOWED: "NO"
+    CODE_SIGNING_REQUIRED: "NO"
+    CODE_SIGNING_IDENTITY: ""
+    TARGETED_DEVICE_FAMILY: "1,2"
+targets:
+  Tingyu:
+    type: application
+    platform: iOS
+    sources:
+      - path: App
+      - path: web
+        type: folder
+        name: web
+    info:
+      path: App/Info.plist
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: io.github.huleixin.tingyu
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon

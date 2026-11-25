@@ -1,0 +1,50 @@
+[
+  {
+    "file": "src/components/visualizer/RearStageReadingArea.tsx",
+    "kind": "visualizer",
+    "requests": 1,
+    "cancels": 1
+  },
+  {
+    "file": "src/components/visualizer/backgrounds/common/FluidBackground.tsx",
+    "kind": "background",
+    "requests": 1,
+    "cancels": 0
+  },
+  {
+    "file": "src/components/visualizer/RearFittedContent.tsx",
+    "kind": "visualizer",
+    "requests": 1,
+    "cancels": 1
+  },
+  {
+    "file": "node_modules/@react-three/fiber/dist/events-9ce18a08.esm.js",
+    "kind": "r3f",
+    "requests": 3,
+    "cancels": 1
+  },
+  {
+    "file": "src/components/visualizer/diorama/dioramaLineRasterCache.ts",
+    "kind": "visualizer",
+    "requests": 2,
+    "cancels": 1
+  },
+  {
+    "file": "src/components/visualizer/VisPlayground.tsx",
+    "kind": "visualizer",
+    "requests": 2,
+    "cancels": 2
+  },
+  {
+    "file": "node_modules/@paper-design/shaders/dist/shader-mount.js",
+    "kind": "paper",
+    "requests": 2,
+    "cancels": 3
+  },
+  {
+    "file": "node_modules/pixi.js/lib/ticker/Ticker.mjs",
+    "kind": "pixi",
+    "requests": 2,
+    "cancels": 1
+  }
+]

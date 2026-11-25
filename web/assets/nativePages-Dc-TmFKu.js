@@ -1,0 +1,1 @@
+import{dr as e,gr as t,mr as n}from"./md5-UtpR8CWv.js";var r=n,i=e;i&&(document.documentElement.dataset.nativeFirst=`true`);var a;function o(){return a??=t().then(e=>e.supported&&e.pages===!0).catch(()=>!1)}function s(e){if(!e)return``;try{return new URL(e,typeof location>`u`?`https://localhost/`:location.href).href}catch{return``}}export{r as i,s as n,o as r,i as t};

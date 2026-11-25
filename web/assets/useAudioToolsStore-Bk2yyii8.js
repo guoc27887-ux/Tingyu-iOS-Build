@@ -1,0 +1,1 @@
+import{et as e}from"./md5-UtpR8CWv.js";import{t}from"./react-BbOHeKyE.js";var n=e,r=t(e=>({open:!1,switching:!1,error:``,notice:``,request:null,show:()=>e({open:!0,error:``,notice:``}),close:()=>e({open:!1}),switchQuality:t=>e({request:{quality:t,id:Date.now()},error:``,notice:``})}));export{r as n,n as t};

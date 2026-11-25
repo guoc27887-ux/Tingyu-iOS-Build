@@ -1,0 +1,1 @@
+import{n as e}from"./react-vendor-CbA1u6HB.js";import{t}from"./LatticePosterTintControls-B5dBd2R-.js";var n=e();function r(e){return(0,n.jsx)(`div`,{className:`flex h-full justify-center overflow-y-auto px-4 py-8`,children:(0,n.jsx)(`div`,{className:`w-full max-w-lg self-start rounded-2xl border border-current/10 p-6`,children:(0,n.jsx)(t,{...e})})})}export{r as default};

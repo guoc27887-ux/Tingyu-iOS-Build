@@ -1,0 +1,1 @@
+html[data-folia-surface=rear-lyrics-panel] [data-rear-content-layer]{left:var(--rear-safe-left)!important;top:var(--rear-safe-top)!important;width:var(--rear-safe-width)!important;height:var(--rear-safe-height)!important;margin:0!important;padding-bottom:0!important;position:absolute!important}html[data-folia-surface=rear-lyrics-panel] [data-rear-subtitles]{padding:0 6px}
