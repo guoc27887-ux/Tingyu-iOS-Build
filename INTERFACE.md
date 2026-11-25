@@ -69,3 +69,9 @@ Beans 的 1010-mobile.js / ikun 音源可作测试脚本（~/workspace/your_file
 
 ## 砍掉清单（他 2026-11-25 拍板）
 背屏歌词（Shizuku/LSPosed/Rear* 全组）、USB 独占输出、权益/Pro 功能（音效 Pro、AI 调音、Hi-Fi 权益）。
+
+## 内置音源（他 2026-11-25 21:34 拍板放进 App）
+- web/builtin-sources/1010-mobile.js（21,307 字节，v1.2.0，五平台聚合）
+- web/builtin-sources/ikun-music-source.js（3,716 字节，v26）
+- 落地方式：文件随包发；FoliaNative.pickLxSourceFile 实现时优先给出这两个内置源（拷入沙盒后走原导入流），
+  免去他再从文件 App 找。LX 管理界面的预置列表格式（web 侧 store）仍在追，未确认前不硬塞 localStorage/IDB。
