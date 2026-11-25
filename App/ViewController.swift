@@ -24,6 +24,15 @@ final class ViewController: UIViewController {
                                            injectionTime: .atDocumentStart,
                                            forMainFrameOnly: false))
         }
+        // 3) Extension-bridge watchdog: if the app's own folia extension
+        //    bootstrap does not register in this WebView, install an
+        //    equivalent wiring (chrome shim + fetch reroute + dispatcher).
+        if let wdURL = Bundle.main.url(forResource: "ext-watchdog", withExtension: "js"),
+           let wdJS = try? String(contentsOf: wdURL, encoding: .utf8) {
+            ucc.addUserScript(WKUserScript(source: wdJS,
+                                           injectionTime: .atDocumentStart,
+                                           forMainFrameOnly: false))
+        }
         ucc.add(bridge, name: "bridge")
         config.userContentController = ucc
 
